@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Project.Home" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style> 
+        /* Sidebar Styling */
+        .sidebar {
+            width: 180px;
+            height: 100vh;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: fixed;
+            left: 0;
+            top: 0;
+            font-family: 'Comic Sans MS', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 20px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .logout {
+            padding: 20px;
+            text-align: center;
+            display: block;
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Main Content Padding to prevent overlap */
+        .main-content {
+            margin-left: 180px; /* Equal to sidebar width */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul>
+                    <li><a href="Dashboard.aspx">Dashboard</a></li>
+                    <li><a href="Charts.aspx">Charts</a></li>
+                    <li><a href="Employees.aspx">Employees</a></li>
+                    <li><a href="Department.aspx">Department</a></li>
+                    <li><a href="Output.aspx">Output</a></li>
+
+                </ul>
+                <a href="Logout.aspx" class="logout">Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
